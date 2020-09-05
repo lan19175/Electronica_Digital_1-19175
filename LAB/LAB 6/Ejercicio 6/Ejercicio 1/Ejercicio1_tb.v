@@ -4,16 +4,17 @@ module testbench();
   reg [1:0]E; 
   wire Y;
 
-//Aeclaración Gate Level MoAelling
+//declaración de variables a utilizar en el ejercicio
 	MEF1 U1(A, B, CLK, reset, set, Y);
 
 
-//Gate Level MoAelling
-//Ejercicio 2 Tabla 1
+//ejercicio 1
+//creación de reloj
 initial begin
 	CLK=0;
 	forever #1 CLK = ~CLK;
 end
+//Creación de parámetros para prueba de ejercicio 1
   initial begin
 	#3
     $display("\n");
@@ -21,6 +22,7 @@ end
     $display("CLK A B Y Estado");
     $display("------------");
     $monitor("  %b  %b %b %b S%d", CLK, A, B, Y, E);
+	
        reset = 1; A = 0; B = 0; set = 0; E=0;
     #1 reset = 0; A = 0; B = 0; E=0;
     #1 reset = 0; A = 0; B = 0; E=0;
