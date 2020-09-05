@@ -1,5 +1,5 @@
-´//Módulo FlipFlop
-module FlipD(input logic CLK, input logic [2:0]D, input logic reset, input logic set, output [2:0]Q);
+//Módulo FlipFlop
+module FlipD(input wire CLK,input wire [2:0]D, input wire reset, input wire set, output [2:0]Q);
 reg Q;
 	always @(posedge CLK or	posedge reset)
 		if (reset)begin
@@ -11,17 +11,17 @@ reg Q;
 	end
 endmodule
 //Ejercicio 3
-module MEF2 (input wire A, input logic C, R, S, output [2:0]Y);
-	output [2:0]D;
-	output [2:0]Q;
+module MEF2 (input wire A, input wire C,input wire R,input wire S, output wire [2:0]Y);
+	wire [2:0]D;
+	wire [2:0]Q;
 	FlipD U1(C,D,R,S,Q);
 	//tabla de transiciones
 	assign D[2] = (~Q[2]&Q[1]&Q[0]&A)|(~Q[2]&~Q[1]&~Q[0]&~A)|(Q[2]&~Q[1]&Q[0])|(Q[2]&~Q[0]&A)|(Q[2]&Q[1]&~A);
 	assign D[1] = (~Q[1]&Q[0]&A)|(Q[1]&~Q[0]&A)|(Q[1]&Q[0]&~A)|(~Q[1]&~Q[0]&~A);
 	assign D[0] = ~Q[0]; 
 	//tabla de salidas
-	assign Y[2] = D[2];
-	assign Y[1] = (~D[2]&D[1])|(D[2]&~D[1]);
-	assign Y[0] = (D[1]&~D[0])|(~D[1]&D[0]);
+	assign Y[2] = Q[2];
+	assign Y[1] = (~Q[2]&Q[1])|(Q[2]&~Q[1]);
+	assign Y[0] = (Q[1]&~Q[0])|(~Q[1]&Q[0]);
 endmodule
 	
