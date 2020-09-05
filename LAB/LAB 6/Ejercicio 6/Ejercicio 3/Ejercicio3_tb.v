@@ -1,4 +1,4 @@
-module testbench();
+module testbench1();
 
   reg A, CLK, reset, set;
   reg [2:0]E; 
@@ -20,11 +20,13 @@ end
 	#3
     $display("\n");
 	$display("Ejercicio 1");
-    $display("CLK A Y Estado");
+    $display("CLK A  Y   Estado");
     $display("---------------");
-    $monitor("  %b  %b %b S%d", CLK, A, Y, E);
-	reset =1; A = 1; set = 0; E=1;
-    #1 reset = 0; A =1; E=1;
+    $monitor("  %b  %2b %b S%d", CLK, A, Y, E);
+	reset =1; A = 1; set = 0; E=0;
+    #1 reset = 0; A =1; E=0;
+	#1 A = 1; E = 1;
+	#1 A = 1; E = 1;
 	#1 A = 1; E = 2;
 	#1 A = 1; E = 2;
 	#1 A = 1; E = 3;
@@ -37,8 +39,8 @@ end
 	#1 A = 1; E = 6;
 	#1 A = 1; E = 7;
 	#1 A = 1; E = 7;
-	#1 A = 1; E = 0;
-	#1 A = 1; E = 0;
+	#1 A = 0; E = 0;
+	#1 A = 0; E = 0;
 	#1 A = 0; E = 7;
 	#1 A = 0; E = 7;
 	#1 A = 0; E = 6;
@@ -53,13 +55,13 @@ end
 	#1 A = 0; E = 2;
 	#1 A = 0; E = 1;
 	#1 A = 0; E = 1;
-	#1 A = 0; E = 0;
-	#1 A = 0; E = 0;
+	#1 E = 0;
+	#1 E = 0;
   end
 	initial
-    #33 $finish;
+    #35	 $finish;
   initial begin
     $dumpfile("Ejercicio3_tb.vcd");
-    $dumpvars(0, testbench);
+    $dumpvars(0, testbench1);
   end
 endmodule
