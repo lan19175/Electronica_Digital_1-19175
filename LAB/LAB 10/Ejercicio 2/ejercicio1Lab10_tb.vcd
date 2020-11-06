@@ -1,0 +1,158 @@
+$date
+	Thu Nov 05 16:55:49 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module Ejercicio_1LAB10 $end
+$var wire 1 ! zero $end
+$var wire 1 " carry $end
+$var wire 4 # Y [3:0] $end
+$var reg 4 $ A [3:0] $end
+$var reg 4 % B [3:0] $end
+$var reg 1 & Clk $end
+$var reg 3 ' sel [2:0] $end
+$scope module U1 $end
+$var wire 4 ( A [3:0] $end
+$var wire 4 ) B [3:0] $end
+$var wire 3 * sel [2:0] $end
+$var reg 5 + X [4:0] $end
+$var reg 4 , Y [3:0] $end
+$var reg 1 " carry $end
+$var reg 1 ! zero $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx ,
+bx +
+bx *
+bx )
+bx (
+bx '
+0&
+bx %
+bx $
+bx #
+x"
+x!
+$end
+#3
+1!
+b0 #
+b0 ,
+b0 '
+b0 *
+b0 %
+b0 )
+b0 $
+b0 (
+#4
+0!
+b1 #
+b1 ,
+b1 $
+b1 (
+#5
+b10 #
+b10 ,
+b10 $
+b10 (
+1&
+#6
+b11 #
+b11 ,
+b11 $
+b11 (
+#7
+b101 #
+b101 ,
+b101 $
+b101 (
+#8
+1!
+b0 #
+b0 ,
+b0 $
+b0 (
+#9
+b10 '
+b10 *
+#10
+0!
+b101 #
+b101 ,
+b101 %
+b101 )
+0&
+#11
+b1 #
+b1 ,
+b1 %
+b1 )
+#12
+1!
+b0 #
+b0 ,
+b0 %
+b0 )
+#15
+1&
+#20
+0&
+#25
+1&
+#30
+0&
+#35
+1&
+#40
+0&
+#45
+1&
+#50
+0&
+#55
+1&
+#60
+0&
+#65
+1&
+#70
+0&
+#75
+1&
+#80
+0&
+#85
+1&
+#90
+0&
+#95
+1&
+#100
+0&
+#105
+1&
+#110
+0&
+#115
+1&
+#120
+0&
+#125
+1&
+#130
+0&
+#135
+1&
+#140
+0&
+#145
+1&
+#150
+0&
